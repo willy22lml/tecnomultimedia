@@ -1,24 +1,44 @@
-boolean blanco, fondo, Union, DentroBoton1, DentroBoton2, DentroBoton3, DentroBoton4, DentroBoton5, DentroBoton6;
+/*
+ tp2
+ Kevin Jason Williams
+ N° legajo 91377/4
+ link video: https://youtu.be/59OvcW_FzOE
+ */
 
+boolean blanco, fondo, Union, DentroBoton1, DentroBoton2, DentroBoton3, DentroBoton4, DentroBoton5, DentroBoton6;
+int colorR, colorG, colorB, colorRN, colorGN, colorBN; 
+
+
+int ejeX, velX;
 
 void setup() {
   size(800, 600);
   ejeX=0;
   velX = 1;
+  //cambio de color blanco
+  colorR=254;
+  colorG=255;
+  colorB=3; 
+  //cambio de color negro
+  colorRN=3;
+  colorGN=12;
+  colorBN=255;
 }
 
 void draw() {
   background(0);
 
+
   //fondo negro
   if (fondo) {
-    background(0);
+    background(15);
   } else {
     FondoBarras();
   }
 
 
   //llamado de los recMoviles
+  ejeX = ejeX + velX;//calculo de movimiento
   fill(254, 255, 3);
   RectMovil(200, 65, 35);
   fill(3, 12, 255);
@@ -26,17 +46,20 @@ void draw() {
 
   //cambio de color de los recmoviles
   if (blanco) {
-    fill(255);
+    noStroke();
+    fill(colorR++, colorG++, colorB+=8);
     RectMovil(200, 65, 35);
-    fill(0);
+    fill(colorRN--, colorGN--, colorBN-=8);
     RectMovil(350, 65, 35);
-    if (Union) {
-      fill(color(0, 0, 0, 150));
-      RectMovil(235, 65, 115);
-    }
   }
+
   //union de los recmoviles
-  if (Union) {
+  if (blanco && Union ) {
+
+    fill(color(0, 0, 0, 180));
+    RectMovil(235, 65, 115);
+  } else if ( Union ) {
+
     fill(color(255, 0, 0, 150));
     RectMovil(235, 65, 115);
   }

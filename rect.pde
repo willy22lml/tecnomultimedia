@@ -1,6 +1,5 @@
 //creacion de rectangulos moviles
-int ejeX;
-int velX;
+
 void RectMovil(int ejeY, int anchoX, int altoY) {
 
   if (ejeX >= width-60) {
@@ -9,7 +8,6 @@ void RectMovil(int ejeY, int anchoX, int altoY) {
     velX=+1;
   } 
 
-  ejeX = ejeX + velX;
   
   rect(ejeX, ejeY, anchoX, altoY );
 } 
@@ -18,7 +16,7 @@ void RectMovil(int ejeY, int anchoX, int altoY) {
 void FondoBarras() {
 
   fill(255);
-  for (int  i=0; i<width; i+=29) {
+  for (int  i=0; i<width; i+=30) {
     rect(i, 0, 15, 600);
   }
 }

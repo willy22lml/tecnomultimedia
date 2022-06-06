@@ -12,17 +12,17 @@ void botones(int PosX, int PosY, int PosX_Tex, int PosY_Tex, String text) {
 //funcion de los botones
 void FuncionDeLosBotones() {
   
-  if ( DentroBoton4 ) {
+  if ( DentroBoton4 ) { //boton "sin color"
     blanco =true;
-  } else if ( DentroBoton1 ) {
+  } else if ( DentroBoton1 ) { //boton "color"
     blanco =false;
-  }else if (DentroBoton5) {
+  }else if (DentroBoton5) { //boton "sin fondo"
     fondo = true;
-  } else if ( DentroBoton2 ) {
+  } else if ( DentroBoton2 ) { //boton "fondo"
     fondo = false;
-  }else if (DentroBoton3) {
+  }else if (DentroBoton3) { //boton "union"
     Union = true;
-  } else if (DentroBoton6) {
+  } else if (DentroBoton6) { //boton "sin union"
     Union = false;
   }
 }//lave funcion botones
