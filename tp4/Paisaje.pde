@@ -1,54 +1,23 @@
 class Paisaje {
-  int CieloX, CieloY, CieloAncho, CieloAlto;
-  int SolX, SolY, SolAncho, SolAlto;
-  int PastoX, PastoY, PastoAncho, PastoAlto;
-  PImage Arbol;
-  boolean Noche;
+//*****Objetos********//
+  Cielo cielo;
+  Sol sol;
+  Arbol arbol;
+  Pasto pasto;
 
-  Paisaje() {
-    CieloX = 0;
-    CieloY = 0;
-    CieloAncho= 1000;
-    CieloAlto = 300;
-    SolX = 100;
-    SolY = 50;
-    SolAncho= 300;
-    SolAlto = 300;
-    PastoX = 0;
-    PastoY = 300;
-    PastoAncho= 1000;
-    PastoAlto = 300;
-    Arbol = loadImage("arbol.png");
-    Noche = false;
+//*****Constructor********//
+  Paisaje() { 
+    cielo = new Cielo();
+    sol = new Sol();
+    pasto = new Pasto();
+    arbol = new Arbol();
   }
-
+  
+//*****Metodo********//
   void Dibujar() {
-    Cielo();
-    Sol();
-    Pasto();
-    Arbol();
-  }
-
-  void Cielo() {
-    fill(28, 155, 255);
-    noStroke();
-    rect(CieloX, CieloY, CieloAncho, CieloAlto);
-  }
-
-  void Sol() {
-    fill(250, 255, 0);
-    noStroke();
-    ellipse(SolX, SolY, SolAncho, SolAlto);
-  }
-
-
-  void Pasto() {
-    fill(28, 255, 0);
-    noStroke();
-    rect(PastoX, PastoY, PastoAncho, PastoAlto);
-  }
-
-  void Arbol() {
-    image(Arbol, 50, 150, 300, 300 );
+    cielo.Dibujar();
+    sol.Dibujar();
+    pasto.Dibujar();
+    arbol.Dibujar();
   }
 }
